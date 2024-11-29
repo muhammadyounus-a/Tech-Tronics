@@ -1,0 +1,837 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --textColor: #0E1F51;
+    --teamColor: #CA0000;
+    --backgroundColor: #F5F5F5;
+} 
+
+
+/* Navbar section */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 5px 70px;
+    z-index: 1000;
+    background-color: #fff;
+}
+
+header.sticky {
+    padding: 10px 80px 1px 80px;
+    background-color: #fff;
+    box-shadow: 3px 4px 4px 0px rgba(214, 214, 214, 0.50);
+}
+
+header .logo {
+    position: relative;
+    color: var(--textColor);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.6s;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.nav__list {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__item {
+    position: relative;
+    list-style: none;
+}
+
+.nav__item a {
+    position: relative;
+    margin: 0 20px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    font-size: 17px;
+    transition: 0.6s;
+    margin-top: 10px;
+}
+
+.nav__link {
+    padding: 10px;
+    color: #000000ee;
+    font-weight: 600;
+}
+
+.header__close,
+.header__toggle {
+    display: none;
+}
+
+header.sticky .logo,
+header.sticky ul li a {
+    color: #000000;
+}
+
+.nav__list a {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+
+.nav__list a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: var(--teamColor);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.nav__list a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 8px;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 20px 0px 5px 10px;
+}
+
+.dropdown-content a {
+    color: #000000 !important;
+    font-weight: 500;
+    margin: 10px 0px 0px 0px;
+}
+
+.dropdown-content a:hover {
+    color: #000000 !important;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* banner section css */
+
+.banner-section {
+    background-image: url('images/Home/banner-img-1.webp');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.banner-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.bannerData {
+    position: relative;
+    z-index: 10;
+}
+
+.banner-section h1{
+    color: #fff;
+    font-weight: 700;
+}
+
+.banner-section p {
+    color: #fff;
+    font-weight: 600;
+}
+
+.banner-section button {
+    background-color: var(--teamColor);
+    width: fit-content;
+    padding: 7px 20px;
+    border: 1px solid var(--teamColor);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.banner-section button:hover{
+    background-color: transparent;
+    border: 1px solid var(--teamColor);
+    transform: 0.3s;
+}
+
+/* about-section css */
+
+.about-section {
+    background-color: var(--backgroundColor);
+    padding: 100px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.about-section h2 {
+    color: var(--textColor);
+    font-weight: 700;
+}
+
+.about-section p {
+    color: #000000;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+/* vision-section css */
+.vision-section {
+    margin-top: 100px;
+}
+
+.vision-section h2 {
+    color: var(--textColor);
+    font-weight: 700;
+    text-align: center;
+}
+
+.vision-section .card {
+    background-color: var(--backgroundColor);
+    padding: 20px;
+    height: 100%;
+    border: 0px;
+}
+
+.vision-section .card img {
+    height: 100px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vision-section .card p {
+    color: #000000;
+    font-weight: 600;
+    line-height: 28px;
+    text-align: center;
+}
+
+/* oruSpecialties-section */
+
+.oruSpecialties-section{
+    margin-top: 100px;
+    background-color: var(--backgroundColor);
+    padding: 100px 0px;
+}
+
+.oruSpecialties-section h2 {
+    color: var(--textColor);
+    font-weight: 700;
+    text-align: center;
+}
+
+.oruSpecialties-section .card {
+    border: 0px;
+    padding: 10px;
+    height: 100%;
+}
+
+.oruSpecialties-section .card img {
+    height: 80px;
+    width: auto;
+}
+
+.oruSpecialties-section .card h4 {
+    color: #242331;
+    font-family: sans-serif;
+}
+
+.oruSpecialties-section .card p {
+    color: #000000;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+/* sector-section css */
+
+.sector-section {
+    margin-top: 100px;
+}
+
+.sector-section h2{
+    color: var(--textColor);
+    font-weight: 700;
+    text-align: center;
+}
+
+.sector-section h4 {
+    color: var(--teamColor);
+    font-weight: 600;
+}
+
+.sector-section .card {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border: 0px;
+}
+
+.sector-section .card p {
+    color: #000000;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+/* products-section css */
+
+.products-section {
+    margin-top: 100px;
+}
+
+.products-section h2 {
+    color: var(--textColor);
+    font-weight: 700;
+    text-align: center;
+}
+
+.products-section .card {
+    background-color: var(--backgroundColor);
+    border: 0px;
+    height: 100%;
+}
+
+.icon-bg {
+    background-color: #fff;
+    height: auto;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.icon-bg img {
+    height: 60px;
+    width: auto;
+}
+
+.products-section .card h5 {
+    color: var(--textColor);
+    font-weight: 800;
+}
+
+.underLine {
+    display: flex;
+}
+
+.underLineBig {
+    height: 5px;
+    width: 70px;
+    background-color: var(--teamColor);
+    border-radius: 5px;
+}
+
+.underLineSmall {
+    height: 5px;
+    width: 30px;
+    background-color: var(--teamColor);
+    border-radius: 5px;
+}
+
+.products-section .card p {
+    color: #000000;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+.products-section .card a {
+    font-weight: 600;
+}
+
+/* brands-section css */
+
+.brands-section {
+    margin-top: 100px;
+}
+
+.brands-section h2 {
+    color: var(--textColor);
+    font-weight: 700;
+    text-align: center;
+}
+
+.brand-container {
+    background-color: var(--backgroundColor);
+    margin-top: 50px;
+    padding: 70px 0px 100px 0px;
+}
+
+.brand-log {
+    width: 14rem;
+    margin-top: 40px;
+    padding: 5px;
+    background-color: #fff;
+    height: 100%;
+}
+
+/* contact section css */
+
+.contact-section {
+    margin-top: 100px;
+}
+
+.contact-section .container {
+    background-color: var(--backgroundColor);
+    padding: 80px 0px;
+}
+
+.contact-section h2 {
+    color: var(--textColor);
+    font-weight: 700;
+}
+
+.contact-section p {
+    color: #000000;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+.contact-form input , .contact-form textarea{
+    padding: 13px 13px 13px 20px !important;
+    border: 0px;
+    outline: 0px;
+}
+
+.contact-form label{
+    color: #000000;
+    font-weight: 600;
+}
+
+.contact-form .submit-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-form .submit-btn button {
+    background-color: var(--teamColor);
+    color: #fff;
+    border: 1px solid var(--teamColor);
+    border-radius: 7px;
+    padding: 10px 30px;
+    transition: 0.3s;
+}
+
+.contact-form .submit-btn button:hover {
+    background-color: transparent;
+    border: 1px solid var(--teamColor);
+    color: var(--teamColor);
+    transform: 0.3s;
+}
+
+/* footer-section css */
+
+.footer-section {
+    margin-top: 100px;
+    background-color: var(--backgroundColor);
+    padding: 100px 0px 10px 0px;
+}
+
+.footer-section img {
+    height: 60px;
+}
+
+.footer-section p {
+    color: #6F6C90;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+.footer-section .social-icons ul{ 
+    display: flex;
+}
+
+.footer-section .social-icons ul li a{ 
+    color: var(--teamColor);
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+.footer-section .social-icons ul li a:hover{ 
+    color: #6F6C90;
+    transform: 0.3s;
+}
+
+.footer-section ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+.footer-section ul li {
+    list-style: none;
+    transition: 0.3s;
+    margin: 17px 0px 0px 0px;
+    font-family: sans-serif;
+}
+
+.footer-section h5 {
+    color: var(--textColor);
+    font-weight: 700;
+}
+
+.footer-section ul li a{
+    text-decoration: none;
+    color: #6F6C90;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.footer-section ul li:hover, .footer-section ul li a:hover{
+    color: var(--teamColor);
+    transform: 0.3s;
+}
+
+.footer-nav {
+    margin-top: 100px;
+}
+
+.footer-nav-datas {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: sans-serif;
+}
+
+/* media query starting */
+
+@media all and (max-width:900px) {
+
+    /* navbar css */
+    body {
+        overflow-x: hidden;
+    }
+
+    body.overflow-hidden {
+        overflow: hidden;
+    }
+
+    header {
+        height: 48px;
+        justify-content: space-between;
+        padding: 0 28px;
+    }
+
+    .logo a {
+        font-size: 0.9rem;
+    }
+
+    .header__toggle {
+        display: inline;
+        color: #000000;
+        font-size: 24px;
+    }
+
+    header.sticky .header__toggle {
+        display: inline;
+        color: #000000;
+        font-size: 24px;
+    }
+
+    .header__close {
+        position: absolute;
+        right: 24px;
+        display: block;
+        font-size: 24px;
+        border-radius: 50%;
+        z-index: 1000;
+        color: #000000;
+    }
+
+    .header__close:hover {
+        background-color: var(--teamColor);
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background-color: var(--backgroundColor);
+        color: #000000ee;
+        width: 40%;
+        height: 100vh;
+        padding: 30px 0;
+        z-index: 1000;
+        transition: 0.5s;
+        border-radius: 0 0 0 50%;
+        z-index: 1000;
+    }
+
+    header.sticky {
+        padding: 10px 40px 15px 40px;
+        background-color: #fff;
+        box-shadow: 3px 4px 4px 0px rgba(214, 214, 214, 0.50);
+    }
+
+    header .logo {
+        position: relative;
+        color: var(--textColor);
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: 0.6s;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .nav__list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .show {
+        right: 0;
+    }
+
+    .nav__item a {
+        color: #000000;
+    }
+
+    .nav__item {
+        margin: 2rem 0;
+    }
+
+    .nav__list a {
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+    }
+
+    .nav__list a:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: var(--teamColor);
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+
+    /* banner section css */
+
+    .banner-section {
+        position: relative;
+        background-image: url('images/Home/banner-img-1.webp');
+        background-size: cover;
+        background-position: center;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;    
+    }
+    
+    .banner-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+    /* about section  */
+
+    .about-section h2 {
+        margin-top: 20px;
+    }
+
+    /* contact section css */
+
+    .contact-section {
+        margin-top: 100px;
+    }
+
+    .contact-section .container {
+        background-color: var(--backgroundColor);
+        padding: 40px 20px;
+    }
+
+    /* footer section */
+
+    .footer-section h5 {
+        margin-top: 20px;
+    }
+
+    .footer-nav {
+        margin-top: 80px;
+    }
+    
+    .footer-nav-datas {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media all and (max-width:768px) {
+
+    /* navbar css */
+    body {
+        overflow-x: hidden;
+    }
+
+    body.overflow-hidden {
+        overflow: hidden;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    header {
+        height: auto;
+        justify-content: space-between;
+        padding: 10px 20px 10px 20px;
+    }
+
+    .logo a {
+        font-size: 0.9rem;
+    }
+
+    .header__toggle {
+        display: inline;
+        color: #000000ee;
+        font-size: 26px;
+    }
+
+    .header__close {
+        position: absolute;
+        right: 24px;
+        display: block;
+        font-size: 24px;
+        border-radius: 50%;
+        z-index: 1000;
+        color: #000000;
+    }
+
+    .nav__item a {
+        color: #000000;
+    }
+
+    .header__close:hover {
+        background-color: var(--backgroundColor);
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background-color: var(--backgroundColor);
+        color: #eeee;
+        width: 100%;
+        height: 100vh;
+        padding: 24px 0;
+        z-index: 1000;
+        transition: 0.5s;
+        border-radius: 0 0 0 0%;
+        z-index: 1000;
+    }
+
+    .nav__list {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20%;
+    }
+
+    .show {
+        right: 0;
+    }
+
+    .nav__item {
+        margin: 1.5rem 0;
+    }
+
+    header.sticky {
+        padding: 10px 35px 10px 35px;
+        background-color: #fff;
+        box-shadow: 3px 4px 4px 0px rgba(214, 214, 214, 0.50);
+    }
+
+    /* banner section css */
+
+    .banner-section {
+        position: relative;
+        background-image: url('images/Home/banner-img-1.webp');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;    
+    }
+    
+    .banner-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+    /* brand logos */
+    
+    .brand-log {
+        width: 9rem;
+        margin-top: 40px;
+        padding: 5px;
+        background-color: #fff;
+        height: 100%;
+    }
+
+    /* footer section */
+
+    .footer-nav {
+        margin-top: 20px;
+    }
+    
+    .footer-nav-datas {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
